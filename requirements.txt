@@ -1,2 +1,4 @@
 rich
 streamlit
+PyQt6
+PyYAML

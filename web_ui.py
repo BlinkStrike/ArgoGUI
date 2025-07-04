@@ -27,6 +27,14 @@ def main():
 
     st.title("Cloudflare Argo Tunnel Manager")
 
+    if st.button("Install cloudflared"):
+        from core.utils import download_and_install_cloudflared
+        result = download_and_install_cloudflared()
+        if result.startswith("cloudflared.exe installed"):
+            st.info(result)
+        else:
+            st.error(result)
+
     if st.button("List Tunnels"):
         st.json(manager.list_tunnels())
 
